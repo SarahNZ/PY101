@@ -1,0 +1,43 @@
+Example 1: A function that returns the sum of two numbers
+# Define a function (sum) and pass in two numbers as arguments
+# Add the two numbers (sum)
+# Return the sum
+
+Example 2: A function that takes a list of strings, and returns a string that is all
+those strings concatenated together
+# Define a function ("concatenate") that has a list of strings as it's one
+argument
+# Pass the function a list of strings. E.g. ['c', 'a', 't']
+# Add all of the strings to a new string (result). I think there is a Python 
+built-in function to do this
+# Return the new string (result)
+
+Example 3: A function that takes a list of integers, and returns a new list
+with every other element from the original list, starting with the first
+element. E.g. every_other([1,4,7,2,5]) # => [1,7,5]
+
+START
+Given a list of integers called "numbers"
+Create a new list variable called 'results"
+SET results = first number in the list (index 0)
+Iterate through the list (every second number) and add to results list
+Return the complete results list
+
+Example 4: 
+Define a function that takes two string arguments. E.g. ('axbxcdxex', 'x')
+Set count = 0 (for number of substring in the first string)
+Set idx = None
+Then iterates through the string to find the first occurrence of the character.
+Then increment count by 1
+If count == 3, reassign idx to the index of that character
+At the end, return idx
+
+Example 5:
+Define a function called merge that takes two list arguments.
+E.g. merge([1, 2, 3], [4, 5, 6])
+SET a new list, "result" as an empty list
+SET idx = range(0:len(list1)). I.e. 0,1,2
+for each _ in idx:
+Add the idx number of the first list to the new list
+Add the idx number of the second list to the new list
+At the end, return the new list
