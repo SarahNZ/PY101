@@ -20,14 +20,13 @@ def prompt(message):
 def display_winner_of_game(player_choice, computer_choice):
     if player_wins(player_choice, computer_choice):
         prompt("You win!")
-        global player_score
-        player_score += 1
+        return (1, 0)
     elif player_choice == computer_choice:
         prompt("It's a tie!")
+        return (0, 0)
     else:
         prompt("Computer wins!")
-        global computer_score
-        computer_score += 1
+        return (0, 1)
 
 def player_wins(player_choice, computer_choice):
     return computer_choice in PLAYER_WINNING_COMBOS[player_choice]
@@ -42,23 +41,20 @@ while True:
                "of your choice again: ")
         player_choice = input()
 
-    match player_choice:
-        case 'r':
-            player_choice = "rock"
-        case 'p':
-            player_choice = "paper"
-        case 's':
-            player_choice = "scissors"
-        case 'l':
-            player_choice = "lizard"
-        case 'a':
-            player_choice = "alien"
+    # player_choice = [choice for choice in VALID_CHOICES if choice[0] == player_choice][0]
+
+    for choice in VALID_CHOICES: 
+        if choice[0] == player_choice:
+            player_choice = choice
 
     computer_choice = random.choice(VALID_CHOICES)
     
     prompt(f"You chose {player_choice}, computer chose {computer_choice}")
 
-    display_winner_of_game(player_choice, computer_choice)
+    result = display_winner_of_game(player_choice, computer_choice)
+
+    player_score += result[0]
+    computer_score += result[1]
 
     if player_score == 3:
         prompt("You won three games, so you won the match!")
