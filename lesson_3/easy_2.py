@@ -27,3 +27,50 @@ del numbers[2]
 print(numbers)
 
 # Question 5
+numbers = [1, 2, 3, 4]
+table = {'field1': 1, 'field2': 2, 'field3': 3, 'field4': 4}
+
+print(isinstance(numbers, list))
+print(isinstance(table, list))
+
+# Question 6
+title = "Flintstone Family Members"
+print(title.center(40))
+
+# Question 7
+statement1 = "The Flintstones Rock!"
+statement2 = "Easy come, easy go."
+
+print(statement1.count('t'))
+print(statement2.count('t'))
+
+# Question 8
+ages = {
+            'Herman': 32, 
+            'Lily': 30, 
+            'Grandpa': 402, 
+            'Eddie': 10
+}
+
+word = 'Spot'
+
+if word in ages:
+    print(f"{word} is a key in the dictionary")
+else:
+    print(f'{word} is not a key in the dictionary')
+# print(ages.get('Spot'))
+
+for _ in ages.values():
+    if _ == {word}:
+        print(f"{word} is a value in the dictionary")
+else:
+        print(f"{word} is not a value in the dictionary")
+
+# Question 9
+additional_ages = {'Marilyn': 22, 'Spot': 237}
+
+# ages['Marilyn'] = 22
+# ages['Spot'] = 237
+
+ages.update(additional_ages)
+print(ages)
